@@ -15,26 +15,22 @@ require_once("db_connect.php");
     <h2>26jy02xx 電子タロウ</h2>
     <h3>カテゴリー一覧</h3>
     <?php
-
     // カテゴリー一覧を表示する
-    try {
-        $sql = "SELECT category_id, category_name FROM w_category ORDER BY category_id";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute();
-        $pdo = null; // データベース接続を閉じる
+    try {  //例外処理は必ず入れること!!
+        //SQL文を作成して実行する。
+        //プリペアードステートメントを作成する。
+        //プリペアードステートメントを実行する。
+        //データベースを切断する。
     } catch (PDOException $e) {
         echo "データベースエラー: " . $e->getMessage();
         exit;
     }   
+
+    // 結果セットからすべてのデータをフェッチ(取り出す)する
+    while(        ) {
     
-    print "<UL>";
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        $cid = $row['category_id'];
-        $cname = $row['category_name'];
-      //echo "<LI>" . "<a href=\"ex0402.php?cid=$cid&cname=$cname\">$cname</a>"  .  "</LI>";
-        echo "<LI>" . "<a href='ex0402.php?cid=$cid&cname=$cname'>$cname</a>"  .  "</LI>";
+    
     }
-    echo "</UL>";
     ?>
 </body>
 
